@@ -178,7 +178,7 @@ public class RequestHandler {
 		
 		String enc = TenpayUtil.getCharacterEncoding(this.request, this.response);
 		String sign = MD5Util.MD5Encode(sb.toString(), enc).toLowerCase();
-		
+
 		this.setParameter("sign", sign);
 		
 		//debug信息
@@ -200,5 +200,12 @@ public class RequestHandler {
 	protected HttpServletResponse getHttpServletResponse() {
 		return this.response;
 	}
-	 
+
+
+    public static void main(String[] args) {
+        String params = "attach=ttt&bank_type=DEFAULT&partner=1226515401&input_charset=UTF-8&body=测试&fee_type=1&notify_url=https://gw.tenpay.com/gateway/simpleverifynotifyid.xml&buyer_id=291168429&sign_key_index=1&out_trade_no=20140202020202&total_fee=123&service_version=1.0&sign_type=MD5&sign=bc20b29366a3651b31d32d75350117e5";
+        String p1 = "bank_type=DEFAULT&body=商品：测试,备注：ces&fee_type=1&input_charset=UTF-8&notify_url=https://gw.tenpay.com/gateway/simpleverifynotifyid.xml&out_trade_no=1948512858&partner=1226515401&return_url=http:///tenpay/payReturnUrl.jsp&service_version=1.0&sign_key_index=1&sign_type=MD5&spbill_create_ip=127.0.0.1&subject=商品：测试,备注：ces&time_start=20150114194938&total_fee=1&trade_mode=1&trans_type=1&transport_fee=0&key=fc42d5895fbf861f13c13369a1cb6b68";
+        System.out.println(MD5Util.MD5Encode(params, "UTF-8").toLowerCase());
+        System.out.println(MD5Util.MD5Encode(p1, "UTF-8").toLowerCase());
+    }
 }

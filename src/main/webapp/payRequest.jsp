@@ -76,19 +76,19 @@ reqHandler.setParameter("sign_key_index", "1");             //密钥序号
 
 
 //业务可选参数
-reqHandler.setParameter("attach", "");                      //附加数据，原样返回
-reqHandler.setParameter("product_fee", "");                 //商品费用，必须保证transport_fee + product_fee=total_fee
-reqHandler.setParameter("transport_fee", "0");               //物流费用，必须保证transport_fee + product_fee=total_fee
-reqHandler.setParameter("time_start", currTime);            //订单生成时间，格式为yyyymmddhhmmss
-reqHandler.setParameter("time_expire", "");                 //订单失效时间，格式为yyyymmddhhmmss
-reqHandler.setParameter("buyer_id", "");                    //买方财付通账号
-reqHandler.setParameter("goods_tag", "");                   //商品标记
-reqHandler.setParameter("trade_mode", trade_mode);                 //交易模式，1即时到账(默认)，2中介担保，3后台选择（买家进支付中心列表选择）
-reqHandler.setParameter("transport_desc", "");              //物流说明
-reqHandler.setParameter("trans_type", "1");                  //交易类型，1实物交易，2虚拟交易
-reqHandler.setParameter("agentid", "");                     //平台ID
-reqHandler.setParameter("agent_type", "");                  //代理模式，0无代理(默认)，1表示卡易售模式，2表示网店模式
-reqHandler.setParameter("seller_id", "");                   //卖家商户号，为空则等同于partner
+reqHandler.setParameter("attach", "ddd");                      //附加数据，原样返回
+reqHandler.setParameter("buyer_id", "280606799");                    //买方财付通账号
+//reqHandler.setParameter("product_fee", "");                 //商品费用，必须保证transport_fee + product_fee=total_fee
+//reqHandler.setParameter("transport_fee", "0");               //物流费用，必须保证transport_fee + product_fee=total_fee
+//reqHandler.setParameter("time_start", currTime);            //订单生成时间，格式为yyyymmddhhmmss
+//reqHandler.setParameter("time_expire", "");                 //订单失效时间，格式为yyyymmddhhmmss
+//reqHandler.setParameter("goods_tag", "");                   //商品标记
+//reqHandler.setParameter("trade_mode", trade_mode);                 //交易模式，1即时到账(默认)，2中介担保，3后台选择（买家进支付中心列表选择）
+//reqHandler.setParameter("transport_desc", "");              //物流说明
+//reqHandler.setParameter("trans_type", "1");                  //交易类型，1实物交易，2虚拟交易
+//reqHandler.setParameter("agentid", "");                     //平台ID
+//reqHandler.setParameter("agent_type", "");                  //代理模式，0无代理(默认)，1表示卡易售模式，2表示网店模式
+//reqHandler.setParameter("seller_id", "");                   //卖家商户号，为空则等同于partner
 
 //请求的url
 String requestUrl = reqHandler.getRequestURL();
@@ -100,6 +100,7 @@ String debuginfo = reqHandler.getDebugInfo();
 
 out.print("requestUrl:  " + requestUrl + "<br><br>");
 out.print("sign_String:  " + debuginfo + "<br><br>");
+
 %>
 <html>
 <head>
